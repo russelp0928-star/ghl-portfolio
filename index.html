@@ -215,9 +215,9 @@ body { margin: 0; background: #0b0e12; }
 ------------------------------------------------------------------- */
 .ghl-portfolio .about { display: grid; gap: 32px; align-items: center; }
 .ghl-portfolio .photo {
-  width: 100%; max-width: 320px; aspect-ratio: 1 / 1; border-radius: var(--radius);
-  border: 2px dashed var(--accent); background: var(--card);
-  display: grid; place-items: center; text-align: center; padding: 20px; color: var(--muted); font-size: .95rem;
+  width: 100%; max-width: 320px; height: auto; aspect-ratio: 1 / 1;
+  border-radius: var(--radius); object-fit: cover; display: block;
+  border: 1px solid var(--line);
 }
 .ghl-portfolio .about p + p { margin-top: 14px; }
 .ghl-portfolio .about p { color: var(--muted); }
@@ -528,11 +528,7 @@ body { margin: 0; background: #0b0e12; }
   <!-- ============================ ABOUT ============================ -->
   <section id="about" class="alt" aria-labelledby="about-title">
     <div class="wrap about">
-      <!-- TODO: replace this placeholder box with your photo:
-           <img src="REPLACE_WITH_YOUR_PHOTO_URL" alt="Mark Lawrence Polidario" width="320" height="320" loading="lazy"> -->
-      <div class="photo" role="img" aria-label="Placeholder for a photo of Mark Lawrence Polidario">
-        <span>Photo placeholder<br>Add your photo here</span>
-      </div>
+      <img class="photo" src="images/mark-polidario.jpg" alt="Mark Lawrence Polidario, GoHighLevel specialist" width="640" height="640" loading="lazy">
       <div>
         <span class="eyebrow">About</span>
         <h2 id="about-title">Hi, I'm Mark Lawrence Polidario</h2>
@@ -604,10 +600,9 @@ body { margin: 0; background: #0b0e12; }
 
         <div>
           <h3>Send a message</h3>
-          <!-- TODO: replace REPLACE_WITH_YOUR_EMAIL_ADDRESS in the mailto link with your real email address. -->
           <div class="contact-block">
             <p>Prefer email? Send me a message and I'll reply to set up a call.</p>
-            <a class="btn btn-primary" href="mailto:REPLACE_WITH_YOUR_EMAIL_ADDRESS">Send a message</a>
+            <a class="btn btn-primary" href="mailto:marklpolidario@gmail.com?subject=GHL%20strategy%20call">Send a message</a>
           </div>
         </div>
 
@@ -621,10 +616,10 @@ body { margin: 0; background: #0b0e12; }
   <footer>
     <div class="wrap">
       <p><strong>Mark Lawrence Polidario</strong> &middot; GoHighLevel specialist</p>
-      <!-- TODO: replace each href="#" below with your real URL. Do not leave "#" on a live site. -->
+      <!-- TODO: replace the LinkedIn and privacy policy href="#" links with your real URLs. Do not leave "#" on a live site. -->
       <ul aria-label="Footer links">
         <li><a href="#">LinkedIn (REPLACE_WITH_YOUR_LINKEDIN_URL)</a></li>
-        <li><a href="#">Email (REPLACE_WITH_YOUR_EMAIL_ADDRESS)</a></li>
+        <li><a href="mailto:marklpolidario@gmail.com">marklpolidario@gmail.com</a></li>
         <li><a href="#">Privacy policy (REPLACE_WITH_YOUR_PRIVACY_POLICY_URL)</a></li>
         <li><a href="#top">Back to top</a></li>
       </ul>
