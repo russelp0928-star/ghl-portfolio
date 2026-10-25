@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tidewell Goods | Everyday Home Essentials Store (Sample Design)</title>
+<meta name="description" content="Sample design for a fictional online shop. Shows abandoned-cart flows, customer segments, review and referral requests in GoHighLevel. Demo only.">
+<meta name="robots" content="noindex">
+<!-- Sample design by Mark. Fictional business. Demo only. -->
+<style>
+/* ===== TIDEWELL GOODS: playful pastel lavender + sunny yellow + mint, rounded blocks, chunky shadows ===== */
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0}
+.site{
+  --lav:#e9e2ff; --lav-d:#5b3fd1; --yel:#ffd84d; --mint:#c9f2e1; --pink:#ffd6e2; --ink:#1d1a2b; --mu:#58536b; --bg:#fffdf8; --ln:#1d1a2b;
+  font-family:"Avenir Next Rounded","Trebuchet MS","Segoe UI",Roboto,Arial,sans-serif; color:var(--ink); background:var(--bg); line-height:1.55; font-size:17px;
+}
+.site h1,.site h2,.site h3{font-weight:800;line-height:1.08;margin:0 0 .5em;letter-spacing:-.02em}
+.site h1{font-size:clamp(2.3rem,9vw,4.4rem)}
+.site h2{font-size:clamp(1.8rem,5.5vw,2.8rem)}
+.site h3{font-size:1.15rem}
+.site p{margin:0 0 1em}
+.mono{font-family:ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;font-size:.78rem;letter-spacing:.04em;text-transform:uppercase;font-weight:700}
+.wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 20px}
+.demo-banner{background:var(--ink);color:#fff;font-size:13px;text-align:center;padding:8px 14px}
+.skip{position:absolute;left:-999px;top:0;background:#fff;color:#000;padding:10px 14px;z-index:20}
+.skip:focus{left:8px;top:8px}
+.site :focus-visible{outline:3px solid var(--lav-d);outline-offset:3px}
+header.top{background:var(--yel);border-bottom:3px solid var(--ln)}
+header.top .wrap{display:flex;justify-content:space-between;align-items:center;padding-top:12px;padding-bottom:12px;gap:10px}
+.logo{font-weight:900;font-size:1.4rem;letter-spacing:-.03em;color:var(--ink);text-decoration:none}
+.logo span{display:inline-block;background:var(--ink);color:var(--yel);border-radius:8px;padding:0 7px;margin-right:4px}
+.btn{display:inline-block;background:var(--lav-d);color:#fff!important;font-weight:800;text-decoration:none;padding:15px 26px;border-radius:14px;border:3px solid var(--ln);box-shadow:4px 4px 0 var(--ln);text-align:center;transition:transform .12s,box-shadow .12s}
+.btn:hover{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--ln)}
+.btn.y{background:var(--yel);color:var(--ink)!important}
+.btn.sm{padding:8px 14px;font-size:.9rem;box-shadow:3px 3px 0 var(--ln)}
+section{padding:54px 0}
+.pill{display:inline-block;background:var(--pink);border:2px solid var(--ln);border-radius:999px;padding:3px 12px;margin-bottom:14px}
+/* hero */
+.hero{background:var(--lav);border-bottom:3px solid var(--ln);padding:40px 0 56px;overflow:hidden}
+.hero .wrap{display:grid;gap:30px}
+.hero p.lead{font-size:1.12rem;color:var(--mu);max-width:44ch}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:22px}
+.shelf{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.prod{background:#fff;border:3px solid var(--ln);border-radius:20px;padding:12px;box-shadow:5px 5px 0 var(--ln)}
+.prod:nth-child(2){transform:translateY(14px)}
+.thumb{aspect-ratio:1/1;border-radius:12px;display:grid;place-items:center;margin-bottom:10px}
+.thumb svg{width:60%;height:60%}
+.prod b{display:block;font-size:.95rem}
+.prod span{display:block;font-size:.78rem;color:var(--mu)}
+.tg1{background:var(--mint)}.tg2{background:var(--pink)}.tg3{background:#fff0b3}.tg4{background:var(--lav)}
+/* offer / categories */
+.cats{display:grid;gap:14px;margin-top:24px}
+.cat{border:3px solid var(--ln);border-radius:20px;padding:22px;display:flex;gap:16px;align-items:center}
+.cat .ico{flex:none;width:56px;height:56px;border-radius:16px;background:#fff;border:3px solid var(--ln);display:grid;place-items:center;font-size:1.6rem}
+.cat p{margin:0;color:var(--mu);font-size:.95rem}
+.c1{background:var(--mint)}.c2{background:#fff0b3}.c3{background:var(--pink)}
+.welcome{margin-top:30px;background:var(--ink);color:#fff;border-radius:24px;padding:26px;display:grid;gap:14px}
+.welcome h3{color:var(--yel);font-size:1.5rem;margin:0}
+.welcome p{margin:0;color:#d8d3ee}
+/* flows */
+.mintbg{background:var(--mint);border-block:3px solid var(--ln)}
+.flow{list-style:none;margin:28px 0 0;padding:0;display:grid;gap:0}
+.flow li{position:relative;background:#fff;border:3px solid var(--ln);border-radius:18px;padding:16px 18px;margin-bottom:26px;box-shadow:4px 4px 0 var(--ln)}
+.flow li:not(:last-child)::after{content:"\2193";position:absolute;left:50%;bottom:-27px;transform:translateX(-50%);font-weight:900;font-size:1.3rem}
+.flow .t{display:inline-block;background:var(--yel);border:2px solid var(--ln);border-radius:8px;padding:1px 8px;margin-bottom:6px}
+.flow p{margin:0;color:var(--mu);font-size:.95rem}
+.flow .br{background:var(--lav)}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.tg{background:#fff;border:2px solid var(--ln);border-radius:999px;padding:4px 12px;font-size:.85rem;font-weight:700}
+.tg.o{background:var(--yel)}
+.two{display:grid;gap:26px}
+.panel{background:#fff;border:3px solid var(--ln);border-radius:22px;padding:22px;box-shadow:6px 6px 0 var(--ln)}
+.panel h3{margin-top:0}
+.panel p{color:var(--mu)}
+.seg{display:grid;gap:8px;margin:12px 0}
+.seg div{display:flex;justify-content:space-between;gap:10px;border-bottom:2px dashed #d7d1ec;padding:6px 0;font-size:.92rem}
+.bars{display:flex;align-items:flex-end;gap:10px;height:120px;border-bottom:3px solid var(--ln);margin:14px 0 8px;padding:0 6px}
+.bars i{flex:1;border:3px solid var(--ln);border-bottom:0;border-radius:8px 8px 0 0;background:var(--lav)}
+.bars i:nth-child(2n){background:var(--yel)}
+.cap{font-size:.75rem;color:var(--mu)}
+/* faq */
+details{background:#fff;border:3px solid var(--ln);border-radius:16px;margin-bottom:10px}
+summary{cursor:pointer;padding:15px 18px;font-weight:800;list-style:none;display:flex;justify-content:space-between;gap:10px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--lav-d);font-size:1.5rem;line-height:1}
+details[open] summary::after{content:"\2212"}
+details p{margin:0;padding:0 18px 16px;color:var(--mu)}
+.promise{display:grid;gap:12px;margin:24px 0 28px}
+.promise div{border:3px solid var(--ln);border-radius:16px;padding:16px;background:var(--lav)}
+.promise p{margin:0;font-size:.95rem;color:var(--mu)}
+/* signup */
+.join{background:var(--yel);border-top:3px solid var(--ln)}
+.card{background:#fff;border:3px solid var(--ln);border-radius:26px;padding:24px;box-shadow:8px 8px 0 var(--ln);max-width:840px;margin:22px auto 0}
+.embed{border:3px dashed var(--lav-d);border-radius:16px;background:var(--lav);padding:16px;margin:14px 0;font-size:.92rem}
+.embed strong{display:block;margin-bottom:4px}
+.embed code{display:block;background:var(--ink);color:var(--yel);padding:8px 10px;border-radius:8px;margin-top:10px;font-size:.78rem;overflow-wrap:anywhere}
+.mini{font-size:.84rem;color:var(--mu)}
+footer{background:var(--ink);color:#cfc9e6;padding:32px 0;font-size:.9rem}
+footer .wrap{display:grid;gap:8px}
+footer strong{color:#fff;font-size:1.2rem}
+@media(min-width:800px){
+  .hero .wrap{grid-template-columns:1.1fr .9fr;align-items:center}
+  .shelf{grid-template-columns:repeat(2,1fr)}
+  .cats{grid-template-columns:repeat(3,1fr)}
+  .cat{flex-direction:column;align-items:flex-start}
+  .welcome{grid-template-columns:1fr auto;align-items:center}
+  .flow{grid-template-columns:repeat(4,1fr);gap:26px}
+  .flow li{margin:0}
+  .flow li:not(:last-child)::after{content:"\2192";left:auto;right:-24px;bottom:auto;top:50%;transform:translateY(-50%)}
+  .two{grid-template-columns:1fr 1fr}
+  .promise{grid-template-columns:repeat(3,1fr)}
+  section{padding:84px 0}
+  .card{padding:40px}
+}
+html{scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+</style>
+</head>
+<body>
+<div class="site">
+<a class="skip" href="#main">Skip to main content</a>
+<div class="demo-banner" role="note">Sample design by Mark &mdash; fictional business, demo only</div>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="Tidewell Goods home"><span>T</span>Tidewell</a>
+    <a class="btn sm y" href="#join">Get the welcome offer</a>
+  </div>
+</header>
+
+<main id="main">
+<section class="hero" id="top" aria-labelledby="h1">
+  <div class="wrap">
+    <div>
+      <span class="pill mono">Everyday home goods</span>
+      <h1 id="h1">Small things that make home feel <span style="color:var(--lav-d)">just right.</span></h1>
+      <p class="lead">Thoughtful essentials for kitchens, bathrooms and cozy corners. Join the list for a welcome offer, new-arrival alerts and a nudge if you leave something in your cart.</p>
+      <div class="hero-cta">
+        <a class="btn" href="#join">Join and get the offer</a>
+        <a class="btn y" href="#how">See how it works</a>
+      </div>
+    </div>
+    <div class="shelf" aria-hidden="true">
+      <div class="prod"><div class="thumb tg1"><svg viewBox="0 0 48 48"><path d="M10 18h26v14a8 8 0 0 1-8 8H18a8 8 0 0 1-8-8z" fill="#fff" stroke="#1d1a2b" stroke-width="3"/><path d="M36 22h3a4 4 0 0 1 0 8h-3" fill="none" stroke="#1d1a2b" stroke-width="3"/><path d="M17 8c0 3 3 3 3 6M25 8c0 3 3 3 3 6" stroke="#1d1a2b" stroke-width="3" fill="none" stroke-linecap="round"/></svg></div><b>Product name</b><span>Price placeholder</span></div>
+      <div class="prod"><div class="thumb tg2"><svg viewBox="0 0 48 48"><rect x="14" y="14" width="20" height="26" rx="4" fill="#fff" stroke="#1d1a2b" stroke-width="3"/><rect x="18" y="8" width="12" height="6" rx="2" fill="#ffd84d" stroke="#1d1a2b" stroke-width="3"/></svg></div><b>Product name</b><span>Price placeholder</span></div>
+      <div class="prod"><div class="thumb tg3"><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="14" fill="#fff" stroke="#1d1a2b" stroke-width="3"/><path d="M24 14v10l7 4" stroke="#1d1a2b" stroke-width="3" fill="none" stroke-linecap="round"/></svg></div><b>Product name</b><span>Price placeholder</span></div>
+      <div class="prod"><div class="thumb tg4"><svg viewBox="0 0 48 48"><path d="M24 38C10 28 8 18 15 14c4-2 8 0 9 4 1-4 5-6 9-4 7 4 5 14-9 24z" fill="#fff" stroke="#1d1a2b" stroke-width="3" stroke-linejoin="round"/></svg></div><b>Product name</b><span>Price placeholder</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="shop" aria-labelledby="s-title">
+  <div class="wrap">
+    <span class="pill mono">Shop by room</span>
+    <h2 id="s-title">Find your next favorite</h2>
+    <div class="cats">
+      <article class="cat c1"><div class="ico" aria-hidden="true">&#127858;</div><div><h3>Kitchen</h3><p>Mugs, boards and little helpers for everyday cooking.</p></div></article>
+      <article class="cat c2"><div class="ico" aria-hidden="true">&#128705;</div><div><h3>Bath</h3><p>Soft towels, dishes and calming extras.</p></div></article>
+      <article class="cat c3"><div class="ico" aria-hidden="true">&#128367;</div><div><h3>Cozy corners</h3><p>Candles, throws and shelf pieces to settle in.</p></div></article>
+    </div>
+    <div class="welcome">
+      <div><h3>Welcome offer</h3><p>Sign up and your discount code arrives by email and text. <span class="mono" style="color:var(--yel)">[Offer details placeholder]</span></p></div>
+      <a class="btn y" href="#join">Claim it</a>
+    </div>
+  </div>
+</section>
+
+<section id="how" class="mintbg" aria-labelledby="h-title">
+  <div class="wrap">
+    <span class="pill mono" style="background:#fff">Behind the scenes</span>
+    <h2 id="h-title">Messages that bring shoppers back</h2>
+    <p style="max-width:60ch;color:var(--mu)">GoHighLevel connects to your store and sends the right message at the right time. Here are two of the flows.</p>
+
+    <h3 style="margin-top:28px">Abandoned cart</h3>
+    <ol class="flow" aria-label="Abandoned cart flow">
+      <li><span class="t mono">Trigger</span><h3>Cart left behind</h3><p>Your store tells GHL a cart was started but not paid.</p></li>
+      <li><span class="t mono">After a short wait</span><h3>Friendly email</h3><p>A reminder shows what is still in the cart.</p></li>
+      <li class="br"><span class="t mono">If no purchase</span><h3>SMS nudge</h3><p>A short text with a link back to the cart.</p></li>
+      <li><span class="t mono">Stop</span><h3>Order placed</h3><p>The flow ends and thank-you messages begin.</p></li>
+    </ol>
+
+    <h3 style="margin-top:36px">After the order</h3>
+    <ol class="flow" aria-label="Post-purchase flow">
+      <li><span class="t mono">Order placed</span><h3>Thank-you message</h3><p>Order confirmation with care tips.</p></li>
+      <li><span class="t mono">Delivered</span><h3>Check-in</h3><p>A quick note to make sure everything arrived well.</p></li>
+      <li class="br"><span class="t mono">Later</span><h3>Review request</h3><p>An easy link to share feedback.</p></li>
+      <li><span class="t mono">Happy customer</span><h3>Referral invite</h3><p>Invite them to share the shop with a friend.</p></li>
+    </ol>
+    <p class="cap" style="margin-top:14px">Timings are adjustable in the workflow builder.</p>
+
+    <div class="two" style="margin-top:36px">
+      <div class="panel" role="img" aria-label="Illustration of customer segments built from tags such as first-time buyer, repeat buyer and kitchen lover">
+        <h3>Smart segments</h3>
+        <p>Tags and custom fields group customers so each person gets relevant messages.</p>
+        <div class="tags" aria-hidden="true"><span class="tg o">first-time-buyer</span><span class="tg">repeat-buyer</span><span class="tg">kitchen-lover</span><span class="tg">cart-abandoned</span><span class="tg o">vip</span></div>
+      </div>
+      <div class="panel" role="img" aria-label="Illustration of a reporting dashboard with empty example bars for leads and orders">
+        <h3>Simple reporting</h3>
+        <p>One dashboard for sign-ups and orders, so you see what is working.</p>
+        <div class="bars" aria-hidden="true"><i style="height:35%"></i><i style="height:55%"></i><i style="height:45%"></i><i style="height:75%"></i><i style="height:60%"></i><i style="height:85%"></i></div>
+        <span class="cap">Illustration only. No real data.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq" aria-labelledby="f-title">
+  <div class="wrap" style="max-width:800px">
+    <span class="pill mono">Good to know</span>
+    <h2 id="f-title">Shopping questions</h2>
+    <div class="promise">
+      <div><h3>Clear policies</h3><p>Shipping and returns are explained up front.</p></div>
+      <div><h3>You choose</h3><p>Pick email, text or both.</p></div>
+      <div><h3>Easy opt-out</h3><p>Unsubscribe whenever you like.</p></div>
+    </div>
+    <details><summary>How do I get the welcome offer?</summary><p>Fill in the sign-up form below and your code is sent to you right away.</p></details>
+    <details><summary>What are the shipping and return terms?</summary><p>Add your real shipping times and return policy here before going live. <em>(Store owner: placeholder.)</em></p></details>
+    <details><summary>What messages will I get?</summary><p>A welcome message, new-arrival news, and reminders about items left in your cart or an order you placed.</p></details>
+    <details><summary>How do I stop messages?</summary><p>Reply STOP to a text or use the unsubscribe link in an email.</p></details>
+  </div>
+</section>
+
+<section id="join" class="join" aria-labelledby="j-title">
+  <div class="wrap">
+    <span class="pill mono" style="background:#fff">Step 1 of 1</span>
+    <h2 id="j-title">Join the list, get the welcome offer</h2>
+    <div class="card">
+      <h3>Where should we send your code?</h3>
+      <!-- ===== GHL FORM EMBED PLACEHOLDER =====
+           GHL: Sites > Forms > Builder > Integrate > Embed Code. Add separate consent checkboxes for email and SMS. -->
+      <div class="embed" id="form-embed">
+        <strong>Placeholder: GoHighLevel form embed</strong>
+        Sign-up form goes here.
+        <code>&lt;iframe src="REPLACE_WITH_YOUR_GHL_FORM_URL"&gt;&lt;/iframe&gt;</code>
+      </div>
+      <p class="mini">By joining you agree to receive marketing messages. Add consent wording and a link to your <a href="#">privacy policy</a> (REPLACE_WITH_YOUR_PRIVACY_POLICY_URL) before going live.</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <strong>Tidewell Goods</strong>
+    <span>[Store link placeholder] &middot; [Support email placeholder]</span>
+    <span>Sample design by Mark. Tidewell Goods is a fictional business created for demonstration only.</span>
+  </div>
+</footer>
+</div>
+</body>
+</html>

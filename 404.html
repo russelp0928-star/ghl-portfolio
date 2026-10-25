@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Page not found | Mark Lawrence Polidario</title>
+<meta name="description" content="This page could not be found.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0b0e12">
+<style>
+/* Same design tokens as the portfolio home page (dark background, electric lime accent) */
+:root {
+  --bg: #0b0e12; --card: #151b23; --line: #243040; --text: #eef2f6; --muted: #a9b4c2;
+  --accent: #c8ff3d; --accent-ink: #0b0e12; --radius: 16px;
+  --font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; }
+body {
+  min-height: 100vh; display: flex; flex-direction: column; background: var(--bg); color: var(--text);
+  font-family: var(--font); font-size: 1.0625rem; line-height: 1.65; -webkit-font-smoothing: antialiased;
+}
+header { border-bottom: 1px solid var(--line); }
+header .wrap { min-height: 64px; display: flex; align-items: center; }
+.wrap { width: 100%; max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+.brand { font-weight: 800; text-decoration: none; color: var(--text); letter-spacing: -.01em; }
+.brand span { color: var(--accent); }
+main { flex: 1; display: grid; place-items: center; padding: 64px 0; position: relative; overflow: hidden; }
+main::before {
+  content: ""; position: absolute; width: 520px; height: 520px; right: -200px; top: -200px;
+  background: radial-gradient(circle, rgba(200,255,61,.14), transparent 65%); pointer-events: none;
+}
+.panel {
+  position: relative; max-width: 600px; margin: 0 auto; background: var(--card); border: 1px solid var(--line);
+  border-radius: var(--radius); padding: 36px 28px; text-align: center;
+}
+.eyebrow { display: inline-block; color: var(--accent); font-size: .8rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 12px; }
+h1 { margin: 0 0 14px; font-size: clamp(1.8rem, 6vw, 2.6rem); line-height: 1.15; letter-spacing: -.02em; }
+p { margin: 0 0 28px; color: var(--muted); }
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 12px 24px;
+  border-radius: 999px; background: var(--accent); color: var(--accent-ink); font-weight: 700; text-decoration: none;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.btn:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(200,255,61,.28); }
+a:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+footer { border-top: 1px solid var(--line); padding: 24px 0; color: var(--muted); font-size: .92rem; }
+@media (prefers-reduced-motion: reduce) { .btn { transition: none; } }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap"><a class="brand" href="/ghl-portfolio/" aria-label="Mark Lawrence Polidario, home">Mark Polidario<span>.</span></a></div>
+</header>
+<main>
+  <div class="wrap">
+    <div class="panel">
+      <span class="eyebrow">Error 404</span>
+      <h1>This page doesn't exist</h1>
+      <p>The link may be old or mistyped. Head back to the home page to see my services and sample projects.</p>
+      <a class="btn" href="/ghl-portfolio/">Back to home</a>
+    </div>
+  </div>
+</main>
+<footer>
+  <div class="wrap">&copy; 2026 Mark Lawrence Polidario &middot; GoHighLevel specialist</div>
+</footer>
+</body>
+</html>

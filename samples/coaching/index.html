@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Marlow Studio | Leadership Coaching by Application (Sample Design)</title>
+<meta name="description" content="Sample design for a fictional leadership coach. Shows an application survey that routes leads, discovery call booking and onboarding in GoHighLevel. Demo only.">
+<meta name="robots" content="noindex">
+<!-- Sample design by Mark. Fictional business. Demo only. -->
+<style>
+/* ===== MARLOW STUDIO: warm cream, terracotta + sage, airy editorial serif with italics ===== */
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0}
+.site{
+  --cream:#f7f0e6; --paper:#fffaf2; --ink:#2b2622; --mu:#6a5f55; --terra:#b2502f; --terra-d:#8f3d21; --sage:#8aa28b; --sage-d:#3f5a44; --sage-l:#e3ebdf; --ln:#e2d6c4;
+  font-family:"Gill Sans","Helvetica Neue","Segoe UI",Roboto,Arial,sans-serif; background:var(--cream); color:var(--ink); line-height:1.7; font-size:17px;
+}
+.site h1,.site h2,.site h3{font-family:Georgia,"Times New Roman",serif;font-weight:400;line-height:1.18;margin:0 0 .55em}
+.site h1{font-size:clamp(2.2rem,7.5vw,4.2rem)}
+.site h2{font-size:clamp(1.8rem,5vw,2.7rem)}
+.site h3{font-size:1.3rem}
+.site em{font-style:italic;color:var(--terra)}
+.site p{margin:0 0 1.1em}
+.wrap{width:100%;max-width:1040px;margin:0 auto;padding:0 24px}
+.narrow{max-width:720px}
+.demo-banner{background:var(--sage-d);color:#fff;font-size:13px;text-align:center;padding:8px 14px}
+.skip{position:absolute;left:-999px;top:0;background:#fff;color:#000;padding:10px 14px;z-index:20}
+.skip:focus{left:8px;top:8px}
+.site :focus-visible{outline:3px solid var(--terra);outline-offset:3px}
+header.top .wrap{display:flex;justify-content:space-between;align-items:center;padding-top:22px;padding-bottom:22px;gap:12px}
+.logo{font-family:Georgia,serif;font-size:1.4rem;color:var(--ink);text-decoration:none;letter-spacing:.01em}
+.logo i{color:var(--terra)}
+.btn{display:inline-block;background:var(--terra);color:#fff!important;text-decoration:none;font-weight:600;letter-spacing:.03em;padding:15px 28px;border-radius:2px;text-align:center;border:1.5px solid var(--terra)}
+.btn:hover{background:var(--terra-d);border-color:var(--terra-d)}
+.btn.out{background:transparent;color:var(--terra-d)!important}
+.btn.out:hover{background:var(--terra);color:#fff!important}
+.btn.sm{padding:10px 18px;font-size:.9rem}
+section{padding:60px 0}
+.over{font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;color:var(--sage-d);font-weight:700;display:block;margin-bottom:16px}
+/* hero */
+.hero{padding:30px 0 70px}
+.hero .wrap{display:grid;gap:40px}
+.hero p.lead{font-size:1.15rem;color:var(--mu);max-width:44ch}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.orb{aspect-ratio:1/1.05;max-width:360px;width:100%;margin:0 auto;border-radius:200px 200px 24px 24px;background:radial-gradient(circle at 30% 25%,#e9b79f,var(--terra) 60%,#7f3519);position:relative;overflow:hidden}
+.orb::after{content:"";position:absolute;left:-10%;right:-10%;bottom:-8%;height:38%;background:var(--sage);border-radius:50% 50% 0 0}
+.orb span{position:absolute;left:50%;top:44%;transform:translate(-50%,-50%);color:#fff;font-family:Georgia,serif;font-style:italic;font-size:1.3rem;text-align:center;line-height:1.3;width:80%;z-index:2}
+/* approach */
+.paper{background:var(--paper);border-block:1px solid var(--ln)}
+.offers{display:grid;gap:18px;margin-top:30px}
+.offer{background:var(--cream);border:1px solid var(--ln);padding:28px}
+.offer .roman{font-family:Georgia,serif;font-style:italic;font-size:1.8rem;color:var(--terra)}
+.offer p{color:var(--mu);margin:0}
+/* survey routing */
+.survey{margin-top:34px;display:grid;gap:16px}
+.q{background:var(--paper);border:1px solid var(--ln);padding:20px}
+.q b{display:block;font-family:Georgia,serif;font-weight:400;font-size:1.05rem;margin-bottom:10px}
+.opt{display:block;border:1px solid var(--ln);border-radius:2px;padding:9px 12px;margin-bottom:6px;font-size:.92rem;color:var(--mu)}
+.opt.on{border-color:var(--terra);background:#fbe9e1;color:var(--ink)}
+.route{margin-top:6px;display:grid;gap:12px}
+.rt{border:1px solid var(--ln);padding:16px;background:var(--paper)}
+.rt.go{border-left:5px solid var(--sage-d)}
+.rt.wait{border-left:5px solid var(--terra)}
+.rt small{display:block;text-transform:uppercase;letter-spacing:.14em;color:var(--mu);font-size:.7rem;font-weight:700}
+.rt p{margin:6px 0 0;font-size:.95rem;color:var(--mu)}
+.ill-tag{font-size:.75rem;color:var(--mu);display:block;margin-top:12px}
+/* journey */
+.journey{list-style:none;padding:0;margin:30px 0 0;display:grid;gap:0;border-left:1px solid var(--ln);margin-left:10px}
+.journey li{padding:0 0 28px 28px;position:relative}
+.journey li::before{content:"";position:absolute;left:-7px;top:8px;width:13px;height:13px;border-radius:50%;background:var(--sage-d);border:3px solid var(--cream)}
+.journey h3{margin-bottom:.2em}
+.journey p{margin:0;color:var(--mu)}
+.mails{margin-top:10px;display:grid;gap:10px}
+.mail{background:var(--paper);border:1px solid var(--ln);padding:12px 14px;font-size:.88rem;color:var(--mu)}
+.mail b{color:var(--ink);display:block}
+/* faq */
+.sage{background:var(--sage-l)}
+details{border-bottom:1px solid #c5d3c1}
+summary{cursor:pointer;padding:18px 0;font-family:Georgia,serif;font-size:1.12rem;list-style:none;display:flex;justify-content:space-between;gap:10px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--terra);font-size:1.5rem;line-height:1}
+details[open] summary::after{content:"\2212"}
+details p{color:var(--mu);margin:0 0 18px}
+.vals{display:grid;gap:18px;margin:28px 0 36px}
+.vals div{border-top:2px solid var(--sage-d);padding-top:12px}
+.vals p{margin:0;color:var(--mu);font-size:.95rem}
+/* apply */
+.apply{background:var(--sage-d);color:#fff}
+.apply h2{color:#fff}
+.apply .over{color:#d9e6d6}
+.card{background:var(--paper);color:var(--ink);padding:28px;max-width:820px;margin:26px auto 0;border-radius:2px}
+.steps{display:flex;gap:8px;list-style:none;padding:0;margin:0 0 20px;font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700}
+.steps li{flex:1;border-bottom:3px solid var(--ln);padding-bottom:6px;color:var(--mu)}
+.steps li.on{border-color:var(--terra);color:var(--terra-d)}
+.embed{border:2px dashed var(--sage-d);background:var(--sage-l);padding:18px;margin:14px 0;font-size:.92rem}
+.embed strong{display:block;margin-bottom:4px}
+.embed code{display:block;background:var(--ink);color:#e3ebdf;padding:8px 10px;margin-top:10px;font-size:.78rem;overflow-wrap:anywhere}
+.mini{font-size:.84rem;color:var(--mu)}
+footer{background:#1f1b18;color:#bdb3a6;padding:34px 0;font-size:.9rem}
+footer .wrap{display:grid;gap:8px}
+footer strong{font-family:Georgia,serif;font-weight:400;color:#fff;font-size:1.2rem}
+@media(min-width:800px){
+  .hero .wrap{grid-template-columns:1.2fr .8fr;align-items:center}
+  .offers{grid-template-columns:repeat(3,1fr)}
+  .survey{grid-template-columns:1fr 1fr 1fr}
+  .route{grid-column:1/-1;grid-template-columns:1fr 1fr}
+  .vals{grid-template-columns:repeat(3,1fr)}
+  .mails{grid-template-columns:repeat(3,1fr)}
+  section{padding:96px 0}
+  .card{padding:46px}
+}
+html{scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="site">
+<a class="skip" href="#main">Skip to main content</a>
+<div class="demo-banner" role="note">Sample design by Mark &mdash; fictional business, demo only</div>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="Marlow Studio home">Marlow <i>Studio</i></a>
+    <a class="btn sm" href="#apply">Apply</a>
+  </div>
+</header>
+
+<main id="main">
+<section class="hero" id="top" aria-labelledby="h1">
+  <div class="wrap">
+    <div>
+      <span class="over">Leadership coaching for founders and managers</span>
+      <h1 id="h1">Lead with <em>clarity</em>, not constant firefighting.</h1>
+      <p class="lead">A small, focused coaching practice. Apply in five minutes, and if we are a fit you book a discovery call. If not, you still get something useful.</p>
+      <div class="hero-cta">
+        <a class="btn" href="#apply">Start your application</a>
+        <a class="btn out" href="#how">See how it works</a>
+      </div>
+    </div>
+    <div class="orb" role="img" aria-label="Decorative illustration of a sunrise over hills"><span>A calmer way to lead</span></div>
+  </div>
+</section>
+
+<section id="offer" class="paper" aria-labelledby="o-title">
+  <div class="wrap">
+    <span class="over">Ways to work together</span>
+    <h2 id="o-title">Three <em>simple</em> paths</h2>
+    <div class="offers">
+      <article class="offer"><span class="roman" aria-hidden="true">i.</span><h3>1:1 coaching</h3><p>Private sessions to work on the decisions, habits and conversations holding you back.</p></article>
+      <article class="offer"><span class="roman" aria-hidden="true">ii.</span><h3>Team workshops</h3><p>Half-day sessions that give a team shared language for feedback and priorities.</p></article>
+      <article class="offer"><span class="roman" aria-hidden="true">iii.</span><h3>Self-paced course</h3><p>A members area with lessons and worksheets for people who prefer to learn alone.</p></article>
+    </div>
+  </div>
+</section>
+
+<section id="how" aria-labelledby="h-title">
+  <div class="wrap">
+    <span class="over">Before the calendar</span>
+    <h2 id="h-title">A short application that <em>routes</em> every lead</h2>
+    <p style="max-width:60ch;color:var(--mu)">In GoHighLevel, survey answers add up to a score. That score decides what happens next, so your calendar fills with the right conversations.</p>
+    <div class="survey" role="img" aria-label="Illustration of a three-question application survey. Strong-fit answers route to the discovery call calendar, early-stage answers route to a free guide and later follow-up.">
+      <div class="q" aria-hidden="true"><b>What are you working on?</b><span class="opt on">Leading a growing team</span><span class="opt">Starting out</span><span class="opt">Just exploring</span></div>
+      <div class="q" aria-hidden="true"><b>When do you want to begin?</b><span class="opt on">This month</span><span class="opt">This quarter</span><span class="opt">Not sure yet</span></div>
+      <div class="q" aria-hidden="true"><b>Ready to invest in coaching?</b><span class="opt on">Yes, I have a budget</span><span class="opt">I need details</span><span class="opt">Not now</span></div>
+      <div class="route" aria-hidden="true">
+        <div class="rt go"><small>Strong fit</small><h3>Book a discovery call</h3><p>The survey redirects to your calendar and the contact enters the pipeline.</p></div>
+        <div class="rt wait"><small>Not yet</small><h3>Free guide and gentle follow-up</h3><p>A resource arrives by email and a nurture sequence checks in later.</p></div>
+      </div>
+    </div>
+    <span class="ill-tag">Illustration of an example survey. Questions and scoring are set up to match your practice.</span>
+
+    <ol class="journey">
+      <li><h3>Discovery call booked</h3><p>The calendar confirms the time and sends preparation emails so the call starts well.</p>
+        <div class="mails" aria-hidden="true">
+          <div class="mail"><b>Right away</b>Confirmation and what to expect</div>
+          <div class="mail"><b>Before the call</b>Short reflection questions</div>
+          <div class="mail"><b>Just before</b>Reminder with the meeting link</div>
+        </div></li>
+      <li><h3>Proposal sent</h3><p>After the call, a proposal goes out and the contact moves to a Proposal stage. A follow-up sequence nudges if there is no reply.</p></li>
+      <li><h3>Client onboarding</h3><p>On sign-up, a workflow sends the welcome pack, intake form and access to the course area.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section id="faq" class="sage" aria-labelledby="f-title">
+  <div class="wrap narrow">
+    <span class="over">Good to know</span>
+    <h2 id="f-title">What to <em>expect</em></h2>
+    <div class="vals">
+      <div><h3>Confidential</h3><p>What you share stays between us.</p></div>
+      <div><h3>Practical</h3><p>Each session ends with clear actions.</p></div>
+      <div><h3>No pressure</h3><p>A call is a conversation, not a sales pitch.</p></div>
+    </div>
+    <details><summary>Who is this for?</summary><p>Founders, managers and team leads who want to lead with more clarity. <em>(Coach: describe your ideal client here.)</em></p></details>
+    <details><summary>What happens after I apply?</summary><p>You see a confirmation straight away. A strong fit goes to the booking calendar, and everyone else receives a helpful guide.</p></details>
+    <details><summary>How long is a discovery call?</summary><p>Set this in your GoHighLevel calendar and state it here, for example 30 minutes.</p></details>
+    <details><summary>How is my application used?</summary><p>Only to understand your goals and contact you about coaching. You can unsubscribe from emails at any time.</p></details>
+  </div>
+</section>
+
+<section id="apply" class="apply" aria-labelledby="a-title">
+  <div class="wrap">
+    <span class="over">Step 1 of 2</span>
+    <h2 id="a-title">Apply for a discovery call</h2>
+    <div class="card">
+      <ol class="steps" aria-label="Application steps"><li class="on">1 Application</li><li>2 Book a call</li><li>3 Prepare</li></ol>
+      <!-- ===== GHL SURVEY / FORM EMBED PLACEHOLDER =====
+           GHL: Sites > Surveys (or Forms) > Integrate > Embed Code. Add a consent checkbox. -->
+      <div class="embed" id="form-embed">
+        <strong>Placeholder: GoHighLevel survey or form embed</strong>
+        Application survey goes here.
+        <code>&lt;iframe src="REPLACE_WITH_YOUR_GHL_FORM_URL"&gt;&lt;/iframe&gt;</code>
+      </div>
+      <!-- ===== GHL CALENDAR EMBED PLACEHOLDER =====
+           GHL: Calendars > Calendar Settings > Share > Embed Code. Show only to qualified leads. -->
+      <div class="embed" id="calendar-embed">
+        <strong>Placeholder: GoHighLevel calendar embed</strong>
+        Discovery call calendar goes here, shown after a strong-fit application.
+        <code>&lt;iframe src="REPLACE_WITH_YOUR_GHL_CALENDAR_URL"&gt;&lt;/iframe&gt;</code>
+      </div>
+      <p class="mini">By applying you agree to be contacted about coaching. Add consent wording and a link to your <a href="#">privacy policy</a> (REPLACE_WITH_YOUR_PRIVACY_POLICY_URL) before going live.</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <strong>Marlow Studio</strong>
+    <span>[Contact email placeholder] &middot; [Location or online placeholder]</span>
+    <span>Sample design by Mark. Marlow Studio is a fictional business created for demonstration only.</span>
+  </div>
+</footer>
+</div>
+</body>
+</html>

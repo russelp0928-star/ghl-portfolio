@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Halden &amp; Rowe Realty | Home Valuations and Buyer Search (Sample Design)</title>
+<meta name="description" content="Sample design for a fictional real estate agent. Shows a valuation lead page, CRM pipeline stages and instant follow-up built in GoHighLevel. Demo only.">
+<meta name="robots" content="noindex">
+<!-- Sample design by Mark. Fictional business. Demo only. -->
+<style>
+/* ===== HALDEN & ROWE: deep navy + brass, editorial serif, uppercase labels ===== */
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0}
+.site{
+  --navy:#0e1b2c; --navy2:#16283f; --paper:#faf7f1; --ink:#1b2430; --muted:#586272; --brass:#b88a3b; --brass-l:#e3c27d; --line:#e4dccb;
+  font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif; color:var(--ink); background:var(--paper); line-height:1.65; font-size:18px;
+}
+.site h1,.site h2,.site h3{font-weight:400;line-height:1.12;margin:0 0 .5em;letter-spacing:-.01em}
+.site h1{font-size:clamp(2.3rem,8vw,4.4rem)}
+.site h2{font-size:clamp(1.8rem,5vw,2.7rem)}
+.site h3{font-size:1.3rem}
+.site p{margin:0 0 1em}
+.site a{color:inherit}
+.wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 22px}
+.sans{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+.label{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;text-transform:uppercase;letter-spacing:.18em;font-size:.74rem;font-weight:700;color:var(--brass);display:block;margin-bottom:14px}
+.demo-banner{font-family:system-ui,Arial,sans-serif;background:var(--brass);color:#14100a;font-size:13px;font-weight:600;text-align:center;padding:8px 14px}
+.skip{position:absolute;left:-999px;top:0;background:#fff;color:#000;padding:10px 14px;z-index:20}
+.skip:focus{left:8px;top:8px}
+.site :focus-visible{outline:3px solid var(--brass-l);outline-offset:3px}
+header.top{background:var(--navy);color:#fff}
+header.top .wrap{display:flex;justify-content:space-between;align-items:center;padding-top:16px;padding-bottom:16px;gap:12px}
+.logo{font-size:1.25rem;letter-spacing:.02em;text-decoration:none;color:#fff}
+.logo em{color:var(--brass-l);font-style:italic}
+.btn{display:inline-block;font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif;background:var(--brass);color:#14100a!important;font-weight:700;letter-spacing:.04em;text-transform:uppercase;font-size:.82rem;text-decoration:none;padding:16px 26px;border:2px solid var(--brass);text-align:center}
+.btn:hover{background:var(--brass-l);border-color:var(--brass-l)}
+.btn.line{background:transparent;color:#fff!important;border-color:#fff}
+.btn.line:hover{background:rgba(255,255,255,.12)}
+.btn.sm{padding:11px 16px;font-size:.74rem}
+section{padding:60px 0}
+/* hero */
+.hero{background:linear-gradient(160deg,var(--navy) 0%,var(--navy2) 70%);color:#fff;padding:48px 0 0;overflow:hidden}
+.hero .wrap{display:grid;gap:30px}
+.hero p.lead{color:#cdd6e2;max-width:48ch;font-size:1.1rem}
+.hero h1 em{color:var(--brass-l)}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+.skyline{display:block;width:100%;height:auto;margin-top:20px}
+.valuebox{background:var(--paper);color:var(--ink);padding:26px;border-top:4px solid var(--brass)}
+.valuebox h2{font-size:1.5rem}
+.valuebox p{font-size:.95rem;color:var(--muted)}
+.fakefield{font-family:system-ui,Arial,sans-serif;font-size:.9rem;border:1px solid var(--line);background:#fff;padding:12px 14px;color:#6b7482;margin-bottom:10px}
+/* services */
+.cols{display:grid;gap:0;margin-top:30px;border-top:1px solid var(--line)}
+.row{padding:26px 0;border-bottom:1px solid var(--line);display:grid;gap:8px}
+.row .n{font-family:system-ui,Arial,sans-serif;font-size:.8rem;letter-spacing:.16em;color:var(--brass);font-weight:700}
+.row p{margin:0;color:var(--muted)}
+/* pipeline */
+.dark{background:var(--navy);color:#fff}
+.dark .lead{color:#cdd6e2}
+.board{margin-top:32px;display:grid;gap:12px;font-family:system-ui,Arial,sans-serif}
+.col{background:var(--navy2);border:1px solid #27405e;padding:14px}
+.col h3{font-family:system-ui,Arial,sans-serif;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brass-l);margin:0 0 10px;font-weight:700}
+.lead-card{background:#0e1b2c;border-left:3px solid var(--brass);padding:9px 11px;margin-bottom:8px;font-size:.85rem;color:#e8edf4}
+.lead-card small{display:block;color:#93a3b8}
+.auto{font-size:.78rem;color:var(--brass-l);margin-top:8px}
+.auto::before{content:"\26A1 "}
+.tl{list-style:none;padding:0;margin:38px 0 0;display:grid;gap:0;border-left:2px solid var(--brass);margin-left:6px}
+.tl li{padding:0 0 22px 24px;position:relative}
+.tl li::before{content:"";position:absolute;left:-8px;top:6px;width:14px;height:14px;background:var(--brass);border-radius:50%}
+.tl b{display:block;font-size:1.1rem;font-weight:400}
+.tl span{color:#cdd6e2;font-size:.98rem}
+.ill-tag{font-family:system-ui,Arial,sans-serif;font-size:.75rem;color:#93a3b8;margin-top:10px;display:block}
+/* trust / faq */
+details{border-bottom:1px solid var(--line);padding:4px 0}
+summary{cursor:pointer;padding:16px 0;font-size:1.15rem;list-style:none;display:flex;justify-content:space-between;gap:10px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--brass);font-size:1.5rem;line-height:1}
+details[open] summary::after{content:"\2212"}
+details p{color:var(--muted);margin:0 0 16px}
+.promise{display:grid;gap:22px;margin:32px 0 40px}
+.promise div{border-top:3px solid var(--brass);padding-top:14px}
+.promise p{color:var(--muted);margin:0}
+/* booking */
+.book{background:var(--navy);color:#fff}
+.funnel{background:var(--paper);color:var(--ink);padding:28px;max-width:860px;margin:0 auto;border-top:6px solid var(--brass)}
+.tabs{display:grid;gap:12px;margin:22px 0}
+.embed{border:2px dashed var(--brass);background:#fff;padding:20px;font-family:system-ui,Arial,sans-serif;font-size:.92rem}
+.embed strong{display:block;margin-bottom:6px;font-size:1rem}
+.embed code{display:block;background:var(--navy);color:var(--brass-l);padding:10px 12px;margin-top:10px;font-size:.8rem;overflow-wrap:anywhere}
+.mini{font-family:system-ui,Arial,sans-serif;font-size:.84rem;color:var(--muted)}
+footer{background:#08111d;color:#a9b6c7;padding:34px 0;font-family:system-ui,Arial,sans-serif;font-size:.9rem}
+footer .wrap{display:grid;gap:10px}
+footer strong{color:#fff;font-family:Georgia,serif;font-weight:400;font-size:1.15rem}
+@media(min-width:800px){
+  .hero .wrap{grid-template-columns:1.3fr .8fr;align-items:end}
+  .valuebox{margin-bottom:-1px}
+  .cols{grid-template-columns:repeat(2,1fr);column-gap:50px}
+  .board{grid-template-columns:repeat(5,1fr)}
+  .promise{grid-template-columns:repeat(3,1fr)}
+  .tabs{grid-template-columns:1fr 1fr}
+  section{padding:90px 0}
+  .funnel{padding:44px}
+}
+html{scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="site">
+<a class="skip" href="#main">Skip to main content</a>
+<div class="demo-banner" role="note">Sample design by Mark &mdash; fictional business, demo only</div>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="Halden and Rowe Realty home">Halden <em>&amp;</em> Rowe</a>
+    <a class="btn sm" href="#book">Free home valuation</a>
+  </div>
+</header>
+
+<main id="main">
+<section class="hero" id="top" aria-labelledby="h1">
+  <div class="wrap">
+    <div>
+      <span class="label">Residential real estate</span>
+      <h1 id="h1">Know what your home is worth. <em>Hear back today.</em></h1>
+      <p class="lead">Thinking of selling, or searching for your next place? Tell us a little and an agent replies by text and email straight away, not days later.</p>
+      <div class="hero-cta">
+        <a class="btn" href="#book">Request my valuation</a>
+        <a class="btn line" href="#how">How we follow up</a>
+      </div>
+    </div>
+    <div class="valuebox" aria-hidden="true">
+      <h2>Home valuation</h2>
+      <p>A short form in the real funnel:</p>
+      <div class="fakefield">Property address</div>
+      <div class="fakefield">Your name and email</div>
+      <div class="fakefield">When are you thinking of selling?</div>
+      <p style="margin:6px 0 0;font-size:.78rem">Illustration only. The live form embed is further down.</p>
+    </div>
+  </div>
+  <svg class="skyline" viewBox="0 0 1200 150" preserveAspectRatio="xMidYMax slice" role="img" aria-label="Simple illustration of a row of houses">
+    <g fill="#1d3552"><path d="M0 150V95l60-40 60 40v55zM140 150V80l50-36 50 36v70zM260 150V100l70-48 70 48v50zM420 150V88l56-40 56 40v62zM560 150V105l64-42 64 42v45zM710 150V84l60-44 60 44v66zM850 150V98l52-38 52 38v52zM980 150V76l66-48 66 48v74zM1130 150V100l35-26 35 26v50z"/></g>
+    <g fill="#b88a3b"><rect x="170" y="108" width="14" height="22"/><rect x="450" y="112" width="14" height="22"/><rect x="745" y="112" width="14" height="22"/><rect x="1010" y="110" width="14" height="24"/></g>
+  </svg>
+</section>
+
+<section id="services" aria-labelledby="s-title">
+  <div class="wrap">
+    <span class="label">What we do</span>
+    <h2 id="s-title">Selling, buying and everything between</h2>
+    <div class="cols">
+      <div class="row"><span class="n">01</span><h3>Home valuation</h3><p>A clear, reasoned estimate of your home&rsquo;s market value, with the next steps explained.</p></div>
+      <div class="row"><span class="n">02</span><h3>Selling your home</h3><p>Pricing, preparation and marketing, with updates sent to you by your preferred channel.</p></div>
+      <div class="row"><span class="n">03</span><h3>Buyer search</h3><p>Tell us what you need and receive matching listings as soon as they appear.</p></div>
+      <div class="row"><span class="n">04</span><h3>Private showings</h3><p>Pick a showing time online and receive reminders with the details.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="how" class="dark" aria-labelledby="h-title">
+  <div class="wrap">
+    <span class="label">How follow-up works</span>
+    <h2 id="h-title">Every lead lands in a pipeline. Nobody gets forgotten.</h2>
+    <p class="lead">In GoHighLevel each enquiry becomes a card that moves through stages. Automations send messages and alert the agent at each step.</p>
+
+    <div class="board" role="img" aria-label="Illustration of a pipeline board with five stages: New lead, Contacted, Showing booked, Offer, Closed">
+      <div class="col" aria-hidden="true"><h3>New lead</h3><div class="lead-card">Valuation request<small>Sample contact</small></div><div class="lead-card">Buyer enquiry<small>Sample contact</small></div><div class="auto">Instant text and email reply</div></div>
+      <div class="col" aria-hidden="true"><h3>Contacted</h3><div class="lead-card">Seller, this season<small>Sample contact</small></div><div class="auto">Drip follow-up for 14 days</div></div>
+      <div class="col" aria-hidden="true"><h3>Showing booked</h3><div class="lead-card">Buyer, two bedrooms<small>Sample contact</small></div><div class="auto">Reminder the day before</div></div>
+      <div class="col" aria-hidden="true"><h3>Offer</h3><div class="lead-card">Offer in progress<small>Sample contact</small></div><div class="auto">Task created for the agent</div></div>
+      <div class="col" aria-hidden="true"><h3>Closed</h3><div class="lead-card">Sale completed<small>Sample contact</small></div><div class="auto">Review and referral request</div></div>
+    </div>
+    <span class="ill-tag">Illustration of a GoHighLevel pipeline with sample cards. Not real contacts.</span>
+
+    <ul class="tl">
+      <li><b>Within seconds</b><span>The lead gets a personal-sounding text and email, and the agent is notified.</span></li>
+      <li><b>If no reply</b><span>A short follow-up sequence by SMS and email continues, then pauses once they respond.</span></li>
+      <li><b>Showing booked</b><span>The calendar adds the visit, sends reminders and moves the card to the next stage.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section id="faq" aria-labelledby="f-title">
+  <div class="wrap" style="max-width:820px">
+    <span class="label">How we work</span>
+    <h2 id="f-title">What you can expect from us</h2>
+    <div class="promise">
+      <div><h3>A fast first reply</h3><p>You hear from us quickly, with a clear next step.</p></div>
+      <div><h3>Plain explanations</h3><p>We explain pricing and process without jargon.</p></div>
+      <div><h3>Your pace</h3><p>No pressure. Ask questions by text, email or call.</p></div>
+    </div>
+    <details><summary>Is the valuation really free?</summary><p>Yes, the request is free and carries no obligation to list with us. <em>(Agent: confirm this matches your offer.)</em></p></details>
+    <details><summary>How is the valuation worked out?</summary><p>An agent reviews your details and comparable local sales, then walks you through the reasoning.</p></details>
+    <details><summary>Will you share my details?</summary><p>No. Your information is used only to answer your request. Add your privacy policy link before going live.</p></details>
+    <details><summary>Can I stop the messages?</summary><p>Yes. Reply STOP to texts or use the unsubscribe link in emails at any time.</p></details>
+  </div>
+</section>
+
+<section id="book" class="book" aria-labelledby="b-title">
+  <div class="wrap">
+    <div class="funnel">
+      <span class="label">Step 1 of 2</span>
+      <h2 id="b-title">Get your home valuation</h2>
+      <p>Share a few details and book a call if you like. An agent will reach out the same day.</p>
+      <div class="tabs">
+        <!-- ===== GHL FORM EMBED PLACEHOLDER =====
+             GHL: Sites > Forms > Builder > Integrate > Embed Code. Include a consent checkbox. -->
+        <div class="embed" id="form-embed">
+          <strong>Placeholder: GoHighLevel form embed</strong>
+          Valuation request form goes here.
+          <code>&lt;iframe src="REPLACE_WITH_YOUR_GHL_FORM_URL"&gt;&lt;/iframe&gt;</code>
+        </div>
+        <!-- ===== GHL CALENDAR EMBED PLACEHOLDER =====
+             GHL: Calendars > Calendar Settings > Share > Embed Code. -->
+        <div class="embed" id="calendar-embed">
+          <strong>Placeholder: GoHighLevel calendar embed</strong>
+          Showing or call booking calendar goes here.
+          <code>&lt;iframe src="REPLACE_WITH_YOUR_GHL_CALENDAR_URL"&gt;&lt;/iframe&gt;</code>
+        </div>
+      </div>
+      <p class="mini">By submitting you agree to be contacted about your request. Add consent wording and a link to your <a href="#">privacy policy</a> (REPLACE_WITH_YOUR_PRIVACY_POLICY_URL) before going live.</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <strong>Halden &amp; Rowe Realty</strong>
+    <span>[Office address placeholder] &middot; [Phone placeholder] &middot; [License number placeholder]</span>
+    <span>Sample design by Mark. Halden &amp; Rowe Realty is a fictional business created for demonstration only.</span>
+  </div>
+</footer>
+</div>
+</body>
+</html>

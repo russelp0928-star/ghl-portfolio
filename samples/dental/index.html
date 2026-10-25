@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pinemint Dental Studio | Gentle Family Dentistry (Sample Design)</title>
+<meta name="description" content="Sample design for a fictional dental clinic. Shows online booking, text reminders and missed-call text-back built in GoHighLevel. Demo only.">
+<meta name="robots" content="noindex">
+<!-- Sample design by Mark. Fictional business. Demo only. -->
+<style>
+/* ===== PINEMINT DENTAL: soft teal, rounded, friendly serif headings ===== */
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0}
+.site{
+  --bg:#f3faf9; --card:#ffffff; --ink:#12343b; --muted:#45636a; --teal:#0f766e; --teal-d:#0b5a54;
+  --mint:#d6f1ed; --coral:#e8735a; --line:#cfe5e2; --r:20px;
+  font-family:"Avenir Next","Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  color:var(--ink); background:var(--bg); line-height:1.6; font-size:17px;
+}
+.site h1,.site h2,.site h3{font-family:Georgia,"Times New Roman",serif;line-height:1.15;margin:0 0 .5em;font-weight:700}
+.site h1{font-size:clamp(2.1rem,7vw,3.6rem)}
+.site h2{font-size:clamp(1.65rem,4.5vw,2.4rem)}
+.site h3{font-size:1.2rem}
+.site p{margin:0 0 1em}
+.site a{color:var(--teal-d)}
+.wrap{width:100%;max-width:1100px;margin:0 auto;padding:0 20px}
+.demo-banner{background:#12343b;color:#fff;font-size:13px;line-height:1.4;text-align:center;padding:9px 14px}
+.skip{position:absolute;left:-999px;top:0;background:#fff;color:#000;padding:10px 14px;z-index:20}
+.skip:focus{left:8px;top:8px}
+.site :focus-visible{outline:3px solid var(--coral);outline-offset:3px}
+header.top{background:#fff;border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:12px;padding-bottom:12px}
+.logo{display:flex;align-items:center;gap:10px;font-family:Georgia,serif;font-weight:700;font-size:1.15rem;color:var(--ink);text-decoration:none}
+.logo svg{flex:none}
+.btn{display:inline-block;background:var(--teal);color:#fff!important;font-weight:700;text-decoration:none;padding:14px 24px;border-radius:999px;border:2px solid var(--teal);text-align:center}
+.btn:hover{background:var(--teal-d);border-color:var(--teal-d)}
+.btn.ghost{background:transparent;color:var(--teal-d)!important}
+.btn.ghost:hover{background:var(--mint)}
+.btn.sm{padding:9px 16px;font-size:.92rem}
+section{padding:56px 0}
+.eyebrow{display:inline-block;color:var(--teal-d);background:var(--mint);font-weight:700;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;padding:5px 12px;border-radius:999px;margin-bottom:14px}
+.lead{font-size:1.1rem;color:var(--muted);max-width:60ch}
+/* hero */
+.hero{padding:40px 0 56px;background:linear-gradient(180deg,#e4f6f3,var(--bg))}
+.hero .wrap{display:grid;gap:36px}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+.ticks{list-style:none;padding:0;margin:22px 0 0;display:grid;gap:8px;color:var(--muted)}
+.ticks li::before{content:"\2713";color:var(--teal);font-weight:900;margin-right:10px}
+/* booking picker illustration */
+.ill{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px;box-shadow:0 18px 40px -22px rgba(15,118,110,.45)}
+.ill-tag{display:block;font-size:.75rem;color:var(--muted);margin-top:12px;text-align:center}
+.cal-head{display:flex;justify-content:space-between;align-items:center;font-weight:700;margin-bottom:12px}
+.days{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-bottom:14px}
+.day{text-align:center;border:1px solid var(--line);border-radius:12px;padding:8px 0;font-size:.85rem;color:var(--muted)}
+.day b{display:block;font-size:1.1rem;color:var(--ink)}
+.day.on{background:var(--teal);border-color:var(--teal);color:#fff}
+.day.on b{color:#fff}
+.slots{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.slot{border:1.5px solid var(--teal);color:var(--teal-d);border-radius:10px;padding:8px 0;text-align:center;font-weight:600;font-size:.9rem}
+.slot.on{background:var(--teal);color:#fff}
+.slot.off{border-color:var(--line);color:#8aa3a8;text-decoration:line-through}
+.confirm{margin-top:14px;background:var(--mint);border-radius:12px;padding:10px 14px;font-size:.9rem}
+/* services */
+.grid{display:grid;gap:16px;margin-top:26px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:24px}
+.card .ico{width:44px;height:44px;border-radius:14px;background:var(--mint);display:grid;place-items:center;margin-bottom:14px}
+.card p{color:var(--muted);margin:0}
+/* how it works */
+.alt{background:#fff;border-block:1px solid var(--line)}
+.steps{list-style:none;padding:0;margin:28px 0 0;display:grid;gap:16px;counter-reset:s}
+.steps li{counter-increment:s;position:relative;background:var(--bg);border:1px solid var(--line);border-radius:var(--r);padding:22px 22px 22px 70px}
+.steps li::before{content:counter(s);position:absolute;left:20px;top:20px;width:34px;height:34px;border-radius:50%;background:var(--teal);color:#fff;font-weight:800;display:grid;place-items:center}
+.steps p{margin:0;color:var(--muted)}
+.two{display:grid;gap:28px;margin-top:34px}
+.phone{background:#12343b;border-radius:30px;padding:14px;max-width:340px;margin:0 auto;width:100%}
+.screen{background:#f6fbfa;border-radius:20px;padding:16px;display:grid;gap:10px;font-size:.9rem}
+.screen .meta{text-align:center;font-size:.72rem;color:var(--muted)}
+.msg{max-width:88%;padding:10px 13px;border-radius:16px;line-height:1.4}
+.msg.in{background:#e1ebe9;justify-self:start;border-bottom-left-radius:4px}
+.msg.out{background:var(--teal);color:#fff;justify-self:end;border-bottom-right-radius:4px}
+.missed{display:flex;gap:8px;align-items:center;justify-self:center;background:#fde6e0;color:#8a2f1b;border-radius:999px;padding:6px 14px;font-weight:700;font-size:.8rem}
+.callout h3{margin-top:0}
+.chips{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:16px 0 0}
+.chips li{background:var(--mint);border-radius:999px;padding:6px 14px;font-size:.88rem;font-weight:600}
+/* faq */
+details{background:#fff;border:1px solid var(--line);border-radius:14px;padding:0;margin-bottom:10px}
+summary{cursor:pointer;font-weight:700;padding:16px 20px;list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--teal);font-size:1.4rem;line-height:1}
+details[open] summary::after{content:"\2212"}
+details p{padding:0 20px;margin:0 0 16px;color:var(--muted)}
+/* booking funnel */
+.book{background:linear-gradient(180deg,var(--bg),#d6f1ed)}
+.funnel{background:#fff;border:1px solid var(--line);border-radius:28px;padding:24px;box-shadow:0 24px 50px -28px rgba(15,118,110,.55);max-width:760px;margin:0 auto}
+.progress{display:flex;gap:6px;list-style:none;padding:0;margin:0 0 20px;font-size:.78rem;font-weight:700}
+.progress li{flex:1;border-top:4px solid var(--line);padding-top:6px;color:var(--muted)}
+.progress li.on{border-color:var(--teal);color:var(--teal-d)}
+.embed{border:2px dashed var(--teal);border-radius:16px;background:#f3faf9;padding:22px;margin:18px 0}
+.embed strong{display:block;margin-bottom:6px}
+.embed code{display:block;background:#12343b;color:#d6f1ed;padding:10px 12px;border-radius:10px;font-size:.82rem;overflow-wrap:anywhere;margin-top:10px}
+.mini{font-size:.85rem;color:var(--muted)}
+footer{background:#12343b;color:#cfe5e2;padding:36px 0;font-size:.92rem}
+footer a{color:#fff}
+footer .wrap{display:grid;gap:14px}
+@media(min-width:760px){
+  .hero .wrap{grid-template-columns:1.1fr .9fr;align-items:center}
+  .grid.three{grid-template-columns:repeat(3,1fr)}
+  .steps{grid-template-columns:repeat(2,1fr)}
+  .two{grid-template-columns:1fr 1fr;align-items:center}
+  section{padding:80px 0}
+  .funnel{padding:40px}
+}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+html{scroll-behavior:smooth}
+</style>
+</head>
+<body>
+<div class="site">
+<a class="skip" href="#main">Skip to main content</a>
+<div class="demo-banner" role="note">Sample design by Mark &mdash; fictional business, demo only</div>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="Pinemint Dental Studio home">
+      <svg width="30" height="30" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 4c-3-2-9-1-9 6 0 4 2 5 2.500 9 .5 4 1.500 9 4 9 2 0 1.500-6 2.500-6s.5 6 2.500 6c2.500 0 3.500-5 4-9 .5-4 2.500-5 2.500-9 0-7-6-8-9-6z" fill="#0f766e"/><path d="M12 12c1 1.500 3 2 4 2s3-.5 4-2" stroke="#fff" stroke-width="1.800" fill="none" stroke-linecap="round"/></svg>
+      Pinemint Dental
+    </a>
+    <a class="btn sm" href="#book">Book a visit</a>
+  </div>
+</header>
+
+<main id="main">
+<!-- HERO -->
+<section class="hero" id="top" aria-labelledby="h1">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">Now welcoming new patients</span>
+      <h1 id="h1">Gentle dental care, booked online in a few clicks.</h1>
+      <p class="lead">Pick a time that suits you, get a text to confirm, and we remind you before you arrive. No phone tag, no waiting on hold.</p>
+      <div class="hero-cta">
+        <a class="btn" href="#book">Book a new-patient visit</a>
+        <a class="btn ghost" href="#how">See how booking works</a>
+      </div>
+      <ul class="ticks">
+        <li>Online booking, day or night</li>
+        <li>Text and email reminders</li>
+        <li>Questions answered by text if we miss your call</li>
+      </ul>
+    </div>
+    <div>
+      <div class="ill" aria-hidden="true">
+        <div class="cal-head"><span>Choose a day and time</span><span>&lsaquo; &rsaquo;</span></div>
+        <div class="days">
+          <div class="day">Mon<b>--</b></div><div class="day on">Tue<b>--</b></div><div class="day">Wed<b>--</b></div><div class="day">Thu<b>--</b></div><div class="day">Fri<b>--</b></div>
+        </div>
+        <div class="slots">
+          <div class="slot off">9:00</div><div class="slot">9:30</div><div class="slot">10:00</div>
+          <div class="slot on">10:30</div><div class="slot">11:00</div><div class="slot off">11:30</div>
+        </div>
+        <div class="confirm">&#10003; New-patient check-up held for you. Confirmation text on its way.</div>
+      </div>
+      <span class="ill-tag">Illustration of the online booking calendar (not a live calendar)</span>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" aria-labelledby="services-title">
+  <div class="wrap">
+    <span class="eyebrow">Services</span>
+    <h2 id="services-title">Everyday dentistry for the whole family</h2>
+    <p class="lead">Each service page in the funnel leads to the same simple booking step.</p>
+    <div class="grid three">
+      <article class="card"><div class="ico" aria-hidden="true">&#129695;</div><h3>Check-ups and cleaning</h3><p>A thorough exam and a fresh clean, with a clear plan for what comes next.</p></article>
+      <article class="card"><div class="ico" aria-hidden="true">&#128736;</div><h3>Fillings and repairs</h3><p>Fix chips, cracks and cavities with tooth-colored materials.</p></article>
+      <article class="card"><div class="ico" aria-hidden="true">&#10024;</div><h3>Whitening</h3><p>Brighten your smile with options that fit your teeth and schedule.</p></article>
+      <article class="card"><div class="ico" aria-hidden="true">&#128578;</div><h3>Clear aligner consults</h3><p>Talk through straightening options in a relaxed, no-pressure visit.</p></article>
+      <article class="card"><div class="ico" aria-hidden="true">&#9889;</div><h3>Urgent dental pain</h3><p>Tooth pain or a broken tooth? Request the earliest available visit.</p></article>
+      <article class="card"><div class="ico" aria-hidden="true">&#129528;</div><h3>Children&rsquo;s dentistry</h3><p>Friendly first visits that help kids feel calm in the chair.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how" class="alt" aria-labelledby="how-title">
+  <div class="wrap">
+    <span class="eyebrow">How it works</span>
+    <h2 id="how-title">From first click to follow-up, handled automatically</h2>
+    <p class="lead">This is the GoHighLevel setup behind the page: a calendar, a workflow and a few text templates.</p>
+    <ol class="steps">
+      <li><h3>Book online</h3><p>The patient picks a time on the calendar. The slot is blocked instantly, so no double bookings.</p></li>
+      <li><h3>Instant confirmation</h3><p>A text and email confirm the visit and include the arrival details and a reschedule link.</p></li>
+      <li><h3>Smart reminders</h3><p>Reminders go out ahead of the visit. The patient can reply to confirm or ask to move the time.</p></li>
+      <li><h3>Review request</h3><p>After a completed visit, a friendly message asks for feedback. The workflow marks the contact in the pipeline.</p></li>
+    </ol>
+
+    <div class="two">
+      <div class="phone" role="img" aria-label="Illustration of a missed call followed by an automatic text message offering a booking link">
+        <div class="screen" aria-hidden="true">
+          <div class="meta">Illustration: missed-call text-back</div>
+          <div class="missed">&#9742; Missed call from a new number</div>
+          <div class="msg out">Hi, this is Pinemint Dental. Sorry we missed your call! Want to book a visit? [Booking link goes here]</div>
+          <div class="msg in">Yes please, do you have anything this week?</div>
+          <div class="msg out">Absolutely. Pick a time that works and we will confirm by text.</div>
+        </div>
+      </div>
+      <div class="callout">
+        <h3>Missed-call text-back</h3>
+        <p class="lead">When the front desk is busy with a patient, a missed call triggers an instant text so the enquiry never goes cold.</p>
+        <ul class="chips"><li>Calendars</li><li>Workflows</li><li>Two-way SMS</li><li>Reputation</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT TO EXPECT / FAQ -->
+<section id="faq" aria-labelledby="faq-title">
+  <div class="wrap" style="max-width:780px">
+    <span class="eyebrow">Good to know</span>
+    <h2 id="faq-title">Common questions</h2>
+    <details><summary>What happens at a first visit?</summary><p>You meet the team, we review your health history, do an exam and cleaning, and talk through a plan. Nothing is done without your say-so.</p></details>
+    <details><summary>Do you accept my insurance?</summary><p>Add your provider on the booking form and our team will confirm coverage with you before the visit. <em>(Clinic: list accepted providers here.)</em></p></details>
+    <details><summary>Can I change my appointment?</summary><p>Yes. Every confirmation and reminder text includes a link to reschedule or cancel.</p></details>
+    <details><summary>What if I have a dental emergency?</summary><p>Tell us in the booking form or reply to our text and we will find the earliest slot. For severe swelling or trouble breathing, contact emergency services.</p></details>
+    <details><summary>How is my information used?</summary><p>Only to arrange and remind you about your care. You can opt out of texts at any time by replying STOP.</p></details>
+  </div>
+</section>
+
+<!-- BOOKING FUNNEL STEP -->
+<section id="book" class="book" aria-labelledby="book-title">
+  <div class="wrap">
+    <div class="funnel">
+      <ol class="progress" aria-label="Booking steps">
+        <li class="on">1. Choose a time</li><li>2. Your details</li><li>3. Confirmed</li>
+      </ol>
+      <h2 id="book-title">Book your new-patient visit</h2>
+      <p class="lead">Choose a time that suits you. You will get a confirmation text straight away.</p>
+
+      <!-- ===== GHL CALENDAR EMBED PLACEHOLDER =====
+           In GHL: Calendars > Calendar Settings > your calendar > Share > Embed Code.
+           Delete the div content below and paste the iframe + script GHL gives you. -->
+      <div class="embed" id="calendar-embed">
+        <strong>Placeholder: GoHighLevel calendar embed</strong>
+        <span class="mini">Replace this box with your booking calendar.</span>
+        <code>&lt;iframe src="REPLACE_WITH_YOUR_GHL_CALENDAR_URL"&gt;&lt;/iframe&gt;</code>
+      </div>
+      <p class="mini">By booking you agree to receive appointment messages. Add consent wording and a link to your <a href="#">privacy policy</a> (REPLACE_WITH_YOUR_PRIVACY_POLICY_URL) before going live.</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <strong>Pinemint Dental Studio</strong>
+    <span>[Clinic address placeholder] &middot; [Phone placeholder] &middot; [Opening hours placeholder]</span>
+    <span>Sample design by Mark. Pinemint Dental Studio is a fictional business created for demonstration only.</span>
+  </div>
+</footer>
+</div>
+</body>
+</html>
