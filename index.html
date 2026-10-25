@@ -285,6 +285,14 @@ body { margin: 0; background: #0b0e12; }
 @media (min-width: 640px) {
   .ghl-portfolio .grid.two, .ghl-portfolio .grid.services, .ghl-portfolio .steps { grid-template-columns: repeat(2, 1fr); }
 }
+/* Seven project cards: on two columns, center the last card instead of leaving it on the left. */
+@media (min-width: 640px) and (max-width: 899px) {
+  .ghl-portfolio .grid.projects > :last-child:nth-child(7) {
+    grid-column: 1 / -1;
+    width: calc((100% - 16px) / 2);
+    justify-self: center;
+  }
+}
 @media (min-width: 900px) {
   .ghl-portfolio section { padding: 96px 0; }
   .ghl-portfolio .wrap { padding: 0 32px; }
@@ -294,6 +302,8 @@ body { margin: 0; background: #0b0e12; }
   .ghl-portfolio .hero .wrap { grid-template-columns: 1.25fr .9fr; align-items: center; }
   .ghl-portfolio .grid.services { grid-template-columns: repeat(3, 1fr); }
   .ghl-portfolio .grid.projects { grid-template-columns: repeat(3, 1fr); }
+  /* Seven project cards: sit the last card in the middle column. */
+  .ghl-portfolio .grid.projects > :last-child:nth-child(7) { grid-column: 2; }
   .ghl-portfolio .steps { grid-template-columns: repeat(4, 1fr); }
   .ghl-portfolio .about { grid-template-columns: 320px 1fr; gap: 56px; }
   .ghl-portfolio .book { grid-template-columns: 1fr 1fr; gap: 32px; align-items: start; }
@@ -395,7 +405,7 @@ body { margin: 0; background: #0b0e12; }
   </section>
 
   <!-- ============================ SAMPLE PROJECTS ============================
-       TODO (Mark): These six cards are EXAMPLE projects, not real clients.
+       TODO (Mark): These seven cards are EXAMPLE projects, not real clients.
        When you have real work, replace each <article class="card project">
        with a real case study (client name only with permission, real scope,
        and real results you can prove). Then delete the ".proj-note" box below
@@ -494,6 +504,20 @@ body { margin: 0; background: #0b0e12; }
           </ul>
           <div class="tags"><span>Email and SMS</span><span>Integrations</span><span>Segments</span><span>Reporting</span></div>
           <a class="sample-link" href="samples/ecommerce/index.html" aria-label="View sample site: e-commerce store (fictional demo)">View sample site <span aria-hidden="true">&rarr;</span></a>
+        </article>
+
+        <article class="card project">
+          <span class="badge">Example project</span>
+          <h3>Combat sports promotion</h3>
+          <p class="goal">Goal: run an events platform that can grow one show at a time.</p>
+          <ul>
+            <li>Events platform with reusable event pages</li>
+            <li>Featured card, schedule, and a bracket layout</li>
+            <li>Sponsor enquiries with partnership tiers</li>
+            <li>Fighter registration held until applications open</li>
+          </ul>
+          <div class="tags"><span>Events</span><span>Pages</span><span>Forms</span><span>Funnels</span></div>
+          <a class="sample-link" href="samples/combat-sports/index.html" aria-label="View sample site: combat sports promotion (fictional demo)">View sample site <span aria-hidden="true">&rarr;</span></a>
         </article>
 
       </div>

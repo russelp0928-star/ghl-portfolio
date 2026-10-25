@@ -1,6 +1,6 @@
 # GoHighLevel portfolio
 
-Static portfolio for Mark Lawrence Polidario, a GoHighLevel specialist. The home page is `index.html`. Six fictional sample sites live under `samples/<slug>/index.html`.
+Static portfolio for Mark Lawrence Polidario, a GoHighLevel specialist. The home page is `index.html`. Seven fictional sample sites live under `samples/<slug>/index.html`.
 
 ## Enable GitHub Pages
 
