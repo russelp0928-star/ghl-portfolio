@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy policy | Mark Lawrence Polidario</title>
+<meta name="description" content="Privacy policy for Mark Lawrence Polidario's GoHighLevel portfolio. This static site has no forms, cookies, or analytics. Contact is by email or Upwork.">
+<meta name="theme-color" content="#0b0e12">
+<style>
+.ghl-portfolio {
+  --bg: #0b0e12;
+  --bg-alt: #10151b;
+  --card: #151b23;
+  --line: #243040;
+  --text: #eef2f6;
+  --muted: #a9b4c2;
+  --accent: #c8ff3d;
+  --accent-ink: #0b0e12;
+  --radius: 16px;
+  --max: 1120px;
+  --font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  text-align: left;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+html { scroll-behavior: smooth; scroll-padding-top: 76px; }
+body { margin: 0; background: #0b0e12; }
+.ghl-portfolio *, .ghl-portfolio *::before, .ghl-portfolio *::after { box-sizing: border-box; }
+.ghl-portfolio h1, .ghl-portfolio h2, .ghl-portfolio p, .ghl-portfolio ul { margin: 0; padding: 0; }
+.ghl-portfolio ul { list-style: none; }
+.ghl-portfolio a { color: inherit; }
+.ghl-portfolio .wrap { width: 100%; max-width: var(--max); margin: 0 auto; padding: 0 20px; }
+.ghl-portfolio a:focus-visible, .ghl-portfolio button:focus-visible {
+  outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 6px;
+}
+.ghl-portfolio .btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  min-height: 48px; padding: 12px 24px; border-radius: 999px;
+  font: inherit; font-weight: 700; text-decoration: none; cursor: pointer;
+  border: 2px solid transparent;
+}
+.ghl-portfolio .btn-primary { background: var(--accent); color: var(--accent-ink); }
+.ghl-portfolio .btn-sm { min-height: 40px; padding: 8px 16px; font-size: .9rem; white-space: nowrap; }
+.ghl-portfolio .nav {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(11,14,18,.92); backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+.ghl-portfolio .nav .wrap { display: flex; align-items: center; justify-content: space-between; min-height: 64px; gap: 12px; }
+.ghl-portfolio .brand { white-space: nowrap; font-weight: 800; text-decoration: none; letter-spacing: -.01em; }
+.ghl-portfolio .brand span { color: var(--accent); }
+.ghl-portfolio .nav-links { display: none; gap: 24px; align-items: center; }
+.ghl-portfolio .nav-links a { text-decoration: none; color: var(--muted); font-size: .95rem; font-weight: 600; }
+.ghl-portfolio .nav-links a:hover { color: var(--text); }
+.ghl-portfolio .nav-right { display: flex; align-items: center; gap: 10px; }
+.ghl-portfolio .menu-btn {
+  min-height: 40px; padding: 0 14px; background: transparent; color: var(--text);
+  border: 1px solid var(--line); border-radius: 999px; font: inherit; font-weight: 600; cursor: pointer;
+}
+.ghl-portfolio .nav.open .nav-links {
+  display: flex; flex-direction: column; align-items: flex-start; gap: 0;
+  position: absolute; left: 0; right: 0; top: 100%; background: var(--bg); border-bottom: 1px solid var(--line); padding: 8px 20px 16px;
+}
+.ghl-portfolio .nav.open .nav-links a { padding: 14px 0; width: 100%; font-size: 1.05rem; }
+@media (max-width: 899px) { .ghl-portfolio .nav .wrap { padding: 0 16px; } }
+@media (min-width: 900px) {
+  .ghl-portfolio .menu-btn { display: none; }
+  .ghl-portfolio .nav-links { display: flex; }
+  .ghl-portfolio .wrap { padding: 0 32px; }
+}
+.ghl-portfolio main { flex: 1; padding: 56px 0 80px; }
+.ghl-portfolio .eyebrow {
+  display: inline-block; color: var(--accent); font-size: .8rem; font-weight: 700;
+  letter-spacing: .14em; text-transform: uppercase; margin-bottom: 12px;
+}
+.ghl-portfolio h1 {
+  font-size: clamp(1.8rem, 6vw, 2.6rem); line-height: 1.15; letter-spacing: -.02em; margin-bottom: 12px;
+}
+.ghl-portfolio .updated { color: var(--muted); margin-bottom: 28px; }
+.ghl-portfolio .notice {
+  background: var(--card); border: 1px solid var(--line); border-left: 3px solid var(--accent);
+  border-radius: 0 12px 12px 0; padding: 16px 20px; color: var(--muted); margin-bottom: 32px;
+  max-width: 72ch;
+}
+.ghl-portfolio .policy { max-width: 72ch; }
+.ghl-portfolio .policy h2 {
+  font-size: 1.35rem; line-height: 1.3; letter-spacing: -.02em; margin: 32px 0 10px;
+}
+.ghl-portfolio .policy p { color: var(--muted); margin-bottom: 14px; }
+.ghl-portfolio .policy p strong { color: var(--text); }
+.ghl-portfolio .policy ul { list-style: disc; padding-left: 1.25em; margin: 0 0 14px; }
+.ghl-portfolio .policy li { color: var(--muted); margin: 6px 0; }
+.ghl-portfolio .policy a { color: var(--text); overflow-wrap: anywhere; }
+.ghl-portfolio .policy a:hover { color: var(--accent); }
+.ghl-portfolio footer { border-top: 1px solid var(--line); padding: 40px 0; color: var(--muted); font-size: .92rem; }
+.ghl-portfolio footer .wrap { display: grid; gap: 16px; }
+.ghl-portfolio footer ul { display: flex; flex-wrap: wrap; gap: 8px 22px; }
+.ghl-portfolio footer a { color: var(--text); overflow-wrap: anywhere; }
+.ghl-portfolio footer a:hover { color: var(--accent); }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+</head>
+<body>
+<div class="ghl-portfolio" id="top">
+
+  <header class="nav" id="site-nav">
+    <div class="wrap">
+      <a class="brand" href="../index.html" aria-label="Mark Lawrence Polidario, home">Mark Polidario<span>.</span></a>
+      <nav aria-label="Main">
+        <div class="nav-links" id="nav-links">
+          <a href="../index.html#services">Services</a>
+          <a href="../index.html#process">How I work</a>
+          <a href="../index.html#work">Sample projects</a>
+          <a href="../index.html#about">About</a>
+          <a href="../index.html#faq">FAQ</a>
+        </div>
+      </nav>
+      <div class="nav-right">
+        <a class="btn btn-primary btn-sm" href="../index.html#book">Book a call</a>
+        <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap">
+      <span class="eyebrow">Privacy</span>
+      <h1>Privacy policy</h1>
+      <p class="updated">Last updated: October 26, 2026</p>
+      <p class="notice">This is a general policy written in plain language. It is not legal advice.</p>
+
+      <div class="policy">
+        <h2>Who this covers</h2>
+        <p>I am Mark Lawrence Polidario, an independent GoHighLevel specialist. This policy describes this portfolio website, a static site hosted on GitHub Pages. It does not cover sample pages that show fictional businesses.</p>
+
+        <h2>What this site collects</h2>
+        <p>This site has no forms. It does not set cookies of its own. It does not run analytics or other tracking scripts. You can read every page without creating an account or sending me any information.</p>
+
+        <h2>How you can contact me</h2>
+        <p>The only ways to contact me from this site are the email link (<a href="mailto:marklpolidario@gmail.com">marklpolidario@gmail.com</a>) and my <a href="https://www.upwork.com/freelancers/~01c9a9ebf0b37fbb18" target="_blank" rel="noopener" aria-label="Mark's Upwork profile (opens in new tab)">Upwork profile</a>.</p>
+
+        <h2>Email</h2>
+        <p>If you email me, I receive whatever you choose to send. That often includes your name, email address, business details, and your message. I use that information only to reply and to discuss a project with you. I do not sell it. I keep it only as long as I need it for that conversation and any work that comes from it, and then I delete it.</p>
+
+        <h2>GitHub Pages</h2>
+        <p>GitHub Pages hosts this site. GitHub, as the host, may log visitor IP addresses for security. That logging is covered by <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener">GitHub's general privacy statement</a>. I do not receive those logs through this site.</p>
+
+        <h2>Upwork</h2>
+        <p>If you message me or hire me on Upwork, that happens on Upwork's site, not on this one. Upwork's own privacy policy applies there: <a href="https://privacy.upwork.com/policies?name=privacy-policy" target="_blank" rel="noopener">Upwork Privacy Policy</a>.</p>
+
+        <h2>If I add a calendar or form later</h2>
+        <p>This site does not include a booking calendar or a contact form. If I add one later, for example a GoHighLevel calendar or form, I will update this policy before it collects any information.</p>
+
+        <h2>Access and deletion</h2>
+        <p>You can ask me what information I still have from your emails, or ask me to delete it. Email <a href="mailto:marklpolidario@gmail.com">marklpolidario@gmail.com</a> and I will reply.</p>
+
+        <h2>Children</h2>
+        <p>This site is for business owners. It is not meant for children, and I do not knowingly collect personal information from children. If you believe a child has emailed me, write to <a href="mailto:marklpolidario@gmail.com">marklpolidario@gmail.com</a> and I will delete that information.</p>
+
+        <h2>Changes</h2>
+        <p>I may update this policy when the site changes. When I do, I will change the "Last updated" date at the top of this page. The version published here is the current one.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p><strong>Mark Lawrence Polidario</strong> &middot; GoHighLevel specialist</p>
+      <ul aria-label="Footer links">
+        <li><a href="https://www.upwork.com/freelancers/~01c9a9ebf0b37fbb18" target="_blank" rel="noopener" aria-label="Mark's Upwork profile (opens in new tab)">Upwork</a></li>
+        <li><a href="mailto:marklpolidario@gmail.com">marklpolidario@gmail.com</a></li>
+        <li><a href="index.html" aria-current="page">Privacy policy</a></li>
+        <li><a href="#top">Back to top</a></li>
+      </ul>
+      <p>GoHighLevel is a trademark of its owner. This site is not affiliated with or endorsed by GoHighLevel.</p>
+      <p>&copy; <span id="year">2026</span> Mark Lawrence Polidario. All rights reserved.</p>
+    </div>
+  </footer>
+
+</div>
+<script>
+(function () {
+  var nav = document.getElementById('site-nav');
+  var btn = document.getElementById('menu-btn');
+  if (nav && btn) {
+    btn.addEventListener('click', function () {
+      var open = nav.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    nav.querySelectorAll('.nav-links a').forEach(function (a) {
+      a.addEventListener('click', function () {
+        nav.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+      });
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && nav.classList.contains('open')) {
+        nav.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+        btn.focus();
+      }
+    });
+  }
+  var y = document.getElementById('year');
+  if (y) y.textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
