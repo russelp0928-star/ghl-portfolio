@@ -207,8 +207,10 @@
 .vora-v3 .fgrid{display:grid;gap:18px;color:var(--muted);font-size:.92rem;}
 .vora-v3 .fgrid address{font-style:normal;}
 .vora-v3 .fgrid img{width:96px;background:#fff;border-radius:14px;padding:6px;}
-.vora-v3 .big{display:flex;justify-content:center;font-family:var(--display);text-transform:uppercase;font-size:27vw;line-height:.8;margin-top:40px;transform:translateY(14%);user-select:none;}
-.vora-v3 .big span{display:inline-block;background:linear-gradient(180deg,var(--gold-hi),var(--gold) 50%,rgba(138,109,43,.2));-webkit-background-clip:text;background-clip:text;color:transparent;transform:translateY(calc((1 - var(--f,1))*(60% + var(--i)*12%)));}
+.vora-v3 .big{display:flex;justify-content:center;align-items:flex-end;gap:.02em;font-family:var(--display);text-transform:uppercase;font-size:min(44vw,500px);line-height:1;margin:clamp(28px,5vw,56px) auto 0;padding:.06em 4vw clamp(36px,6vw,80px);max-width:100%;box-sizing:border-box;user-select:none;}
+.vora-v3 .big span{display:inline-block;line-height:1;padding-top:.04em;background:linear-gradient(180deg,var(--gold-hi),var(--gold) 60%,#7a5c22);-webkit-background-clip:text;background-clip:text;color:transparent;}
+.vora-v3.motion .big span{opacity:0;transform:translateY(.18em);transition:opacity .9s var(--ease),transform 1s var(--ease);transition-delay:calc(var(--i)*90ms);}
+.vora-v3.motion .big.in span{opacity:1;transform:none;}
 
 /* ===== REVEALS (only when motion is allowed) ===== */
 .vora-v3.motion [data-reveal]{opacity:0;transform:translateY(34px);transition:opacity .9s var(--ease),transform .9s var(--ease);transition-delay:var(--d,0s);}
@@ -271,7 +273,7 @@
 .vora-v3 .frame{border:1px solid var(--line);}
 .vora-v3 .foot{background:linear-gradient(180deg,#faf6ee,#f3ecdf);}
 .vora-v3 .fgrid img{background:#17140f;padding:8px;}
-.vora-v3 .big span{background:linear-gradient(180deg,#d4b25e,#8a6a1f 55%,rgba(122,92,23,.12));-webkit-background-clip:text;background-clip:text;}
+.vora-v3 .big span{background:linear-gradient(180deg,#d4b25e,#8a6a1f 60%,#5c4512);-webkit-background-clip:text;background-clip:text;}
 
 @media (min-width:760px){
  .vora-v3 section{padding:110px 0;}
@@ -518,8 +520,8 @@
     (function step(t){t0=t0||t;var k=clamp((t-t0)/1400,0,1);el.textContent=Math.round(to*(1-Math.pow(1-k,3)));if(k<1)requestAnimationFrame(step);})(performance.now());};
   if('IntersectionObserver' in window){
     var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');if(e.target.dataset.count)count(e.target);io.unobserve(e.target);}})},{threshold:.18,rootMargin:'0px 0px -6% 0px'});
-    $$('[data-reveal],[data-words],[data-count]').forEach(function(el){io.observe(el)});
-  } else { $$('[data-reveal],[data-words]').forEach(function(el){el.classList.add('in')}); $$('[data-count]').forEach(function(el){el.textContent=el.dataset.count}); }
+    $$('[data-reveal],[data-words],[data-count],.big').forEach(function(el){io.observe(el)});
+  } else { $$('[data-reveal],[data-words],.big').forEach(function(el){el.classList.add('in')}); $$('[data-count]').forEach(function(el){el.textContent=el.dataset.count}); }
 
   /* Portal + scroll-bound effects */
   var portal=$('.portal'), stage=$('.stage'), bar=$('.progress'), big=$('.big'), chaps=$$('.chap p');
@@ -533,9 +535,9 @@
       var o;
       if(sticky){var r=portal.getBoundingClientRect();o=clamp(-r.top/(r.height-vh)/.8,0,1);} else {o=1;}
       stage.style.setProperty('--o',o.toFixed(4));
-      var fr=big.getBoundingClientRect(); big.style.setProperty('--f',clamp((vh-fr.top)/(fr.height+vh*.25),0,1).toFixed(3));
       chaps.forEach(function(p){var b=p.getBoundingClientRect();var k=clamp((vh*.85-b.top)/(b.height+vh*.35),0,1);var ws=p.children;var lit=Math.round(k*ws.length);for(var i=0;i<ws.length;i++)ws[i].classList.toggle('lit',i<lit);});
     }
+    if(big&&!big.classList.contains('in')&&big.getBoundingClientRect().top<vh)big.classList.add('in');
     var de=document.documentElement, rr=root.getBoundingClientRect();
     bar.style.setProperty('--p',clamp(-rr.top/(rr.height-vh),0,1).toFixed(4));
   }
